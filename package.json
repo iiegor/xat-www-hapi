@@ -4,6 +4,7 @@
   "description": "The xat website",
   "main": "server.js",
   "scripts": {
+    "dev": "NODE_ENV=dev gulp dev",
     "start": "node server.js"
   },
   "repository": {

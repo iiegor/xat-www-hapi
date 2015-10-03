@@ -15,5 +15,8 @@
 
 <body>
   {{{ content }}}
+
+  {{#if devEnv}}<script defer async src="/static/js/tota11y.min.js"></script>{{/if}}
+  <script defer src="/static/{{m "js/index.min.js"}}"></script>
 </body>
 </html>
