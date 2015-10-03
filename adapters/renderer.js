@@ -8,7 +8,6 @@ exports.register = function(server, options, next) {
     var options = {
       correlationID: request.id,
       stamp: request.server.stamp,
-      features: request.features,
       devEnv: (process.env.NODE_ENV === 'dev'),
     };
 
