@@ -13,6 +13,20 @@ var routes = [
       }
     }
   }, {
+    path: '/web_gear/{path*}',
+    method: 'GET',
+    handler: {
+      directory: {
+        path: './assets/misc'
+      }
+    }
+  }, {
+    path: '/crossdomain.xml',
+    method: 'GET',
+    handler: {
+      file: './assets/misc/crossdomain.xml'
+    }
+  }, {
     path: '/',
     method: 'GET',
     handler: require('../handlers/home.js')
@@ -21,9 +35,21 @@ var routes = [
     method: 'GET',
     handler: require('../handlers/room.js')
   }, {
-    method: '*',
     path: '/{p*}',
+    method: '*',
     handler: require("../handlers/fallback")
+  }, {
+    paths: [
+      '/web_gear/chat/auser3.php',
+      '/web_gear/chat/ip2.htm',
+      '/web_gear/chat/pow2.php',
+      '/web_gear/chat/kiss.php',
+      '/web_gear/chat/gift2.php'
+    ],
+    method: 'GET',
+    handler: function(request, reply) {
+      reply('pinggggg')
+    }
   }
 ];
 

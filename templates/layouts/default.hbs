@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>xat</title>
+  <title>{{#if room}}{{room.name}} chat group{{else}}xat{{/if}}</title>
 
   {{#if room}}
     <meta property="og:title" content="{{room.name}} chat group" />
     <meta property="og:description" content="{{room.description}}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{canonicalURL}}" />
-    <meta property="og:image" content="/images/logo.png" />
+    <meta property="og:image" content="{{url}}/images/logo_50.png" />
     <meta property="og:site_name" content="xat" />
   {{/if}}
 

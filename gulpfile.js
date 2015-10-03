@@ -138,7 +138,7 @@ gulp.task('rev', ['browserify', 'styles'], function() {
     .pipe(gulp.dest('static'));
 });
 
-gulp.task('dev-build', ['fonts', 'images', 'misc', 'styles', 'browserify', 'concat']);
+gulp.task('dev-build', ['fonts', 'images', /*'misc',*/ 'styles', 'browserify', 'concat']);
 gulp.task('prod-build', ['dev-build', 'rev']);
 gulp.task('build', ['prod-build']);
 gulp.task('dev', ['dev-build', 'tota11y', 'nodemon', 'watch']);

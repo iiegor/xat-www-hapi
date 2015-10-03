@@ -26,6 +26,7 @@
     "hapi-auth-cookie": "^3.1.0",
     "hoek": "^2.16.3",
     "inert": "^3.0.2",
+    "lodash": "^3.10.1",
     "stylus": "^0.52.4",
     "vision": "^3.0.0"
   },

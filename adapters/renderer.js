@@ -18,6 +18,7 @@ exports.register = function(server, options, next) {
       correlationID: request.id,
       stamp: request.server.stamp,
       devEnv: (process.env.NODE_ENV === 'dev'),
+      url: process.env.CANONICAL_HOST,
     };
 
     if (request.response && request.response.variety && request.response.variety.match(/view|plain/)) {

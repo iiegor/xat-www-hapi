@@ -5,6 +5,10 @@ body {
   color text-color
 }
 
+a {
+  text-decoration none
+}
+
 body {
   background-color background-color
 }
@@ -17,7 +21,7 @@ header {
 
 header .header-nav {
   background-color header-nav-color
-  height 55px
+  height header-nav-height
   border-bottom 1px solid header-nav-border-color
   
   ul.nav {
@@ -26,8 +30,18 @@ header .header-nav {
     list-style none
     
     & > li {
-      display inline-block
       position relative
+      float left
+      
+      & > a {
+        display block
+        padding 17px 0
+        width 104px
+        height header-nav-height
+        border-right 1px solid #111
+        box-sizing border-box
+        text-align center
+      }
     }
   }
 }
