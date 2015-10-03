@@ -1,7 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
   <title>xat-www</title>
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1,user-scalable=yes">
+
+  {{#if devEnv}}
+  <link rel="stylesheet" media="all" href="/static/css/index.css">
+  {{else}}
+  <link rel="stylesheet" media="all" href="/static/{{m "css/index.css"}}">
+  {{/if}}
 </head>
 
 <body>

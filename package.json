@@ -18,8 +18,27 @@
   "homepage": "https://github.com/iiegor/xat-www#readme",
   "dependencies": {
     "bluebird": "^2.10.2",
+    "bole": "^2.0.0",
+    "dotenv": "^1.2.0",
     "handlebars": "^4.0.3",
     "hapi": "^10.2.0",
+    "inert": "^3.0.2",
+    "stylus": "^0.52.4",
     "vision": "^3.0.0"
+  },
+  "devDependencies": {
+    "bistre": "^1.0.0",
+    "browserify": "^5.8.0",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.2.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-nodemon": "^1.0.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-rev-all": "^0.8.21",
+    "gulp-streamify": "0.0.5",
+    "gulp-stylus": "^1.0.0",
+    "gulp-uglify": "^0.3.0",
+    "imagemin-pngcrush": "^1.0.0",
+    "vinyl-source-stream": "^0.1.1"
   }
 }
