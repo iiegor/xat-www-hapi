@@ -1,4 +1,10 @@
 module.exports = [
   require('inert'),
-  require('vision')
+  require('vision'),
+  {
+    register: require('./renderer'),
+    options: {
+      lang: "en_US"
+    }
+  }
 ];
