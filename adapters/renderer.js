@@ -4,6 +4,15 @@ var url = require('url'),
 var humans = [];
 
 exports.register = function(server, options, next) {
+  server.ext('onPreHandler', function(request, reply) {
+    // Generate `request.room` for global
+    if (request.params.room) {
+      request.roomName = request.params.room;
+    }
+
+    return reply.continue();
+  });
+
   server.ext('onPreResponse', function(request, reply) {
     var options = {
       correlationID: request.id,

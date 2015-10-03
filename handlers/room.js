@@ -1,7 +1,7 @@
 module.exports = function(request, reply) {
-  var name = request.params.name;
+  var name = request.roomName;
   var context = {
-    name: name
+    room: name
   };
 
   reply.view('room', context);

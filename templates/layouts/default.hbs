@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>xat-www</title>
+  <title>xat</title>
+
+  {{#if room}}
+    <meta property="og:title" content="{{room.name}} chat group" />
+    <meta property="og:description" content="{{room.description}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{canonicalURL}}" />
+    <meta property="og:image" content="/images/logo.png" />
+    <meta property="og:site_name" content="xat" />
+  {{/if}}
 
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1,user-scalable=yes">
 
+  <link rel="canonical" href="{{canonicalURL}}">
   {{#if devEnv}}
   <link rel="stylesheet" media="all" href="/static/css/index.css">
   {{else}}
@@ -13,8 +23,19 @@
   {{/if}}
 </head>
 
-<body>
-  {{{ content }}}
+<body itemscope itemtype="http://schema.org/WebSite">
+  <header>
+    <nav class="header-nav" role="navigation">
+      <ul class="nav">
+        <li class="nav-item"><a href="/" class="nav-item-link">Home</a></li>
+        <li class="nav-item"><a href="/login" class="nav-item-link">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main role="main">
+    {{{ content }}}
+  </main>
   
   {{#if devEnv}}
   <script defer src="/static/js/index.js"></script>
