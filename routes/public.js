@@ -35,21 +35,33 @@ var routes = [
     method: 'GET',
     handler: require('../handlers/room.js')
   }, {
+    path: '/web_gear/chat/auser3.php',
+    method: 'GET',
+    handler: require("../handlers/ops").auser
+  }, {
+    path: '/web_gear/chat/pow2.php',
+    method: 'GET',
+    handler: require("../handlers/ops").pow
+  }, {
+    path: '/web_gear/chat/ip2.htm',
+    method: 'GET',
+    handler: require("../handlers/ops").ips
+  }, {
+    path: '/web_gear/chat/kiss.php',
+    method: 'GET',
+    handler: require("../handlers/ops").kiss
+  }, {
+    path: '/web_gear/chat/gift2.php',
+    method: 'GET',
+    handler: require("../handlers/ops").gift
+  }, {
+    path: '/json/lang/customlang2.php',
+    method: 'GET',
+    handler: require("../handlers/ops").customlang
+  }, {
     path: '/{p*}',
     method: '*',
     handler: require("../handlers/fallback")
-  }, {
-    paths: [
-      '/web_gear/chat/auser3.php',
-      '/web_gear/chat/ip2.htm',
-      '/web_gear/chat/pow2.php',
-      '/web_gear/chat/kiss.php',
-      '/web_gear/chat/gift2.php'
-    ],
-    method: 'GET',
-    handler: function(request, reply) {
-      reply('pinggggg')
-    }
   }
 ];
 

@@ -39,7 +39,7 @@ exports.register = function(server, options, next) {
         break;
       case "plain":
         if (typeof (request.response.source) === "object") {
-          request.response.source = Hoek.applyToDefaults(options, request.response.source);
+          // request.response.source = Hoek.applyToDefaults(options, request.response.source);
         }
         break;
     }
