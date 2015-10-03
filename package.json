@@ -1,0 +1,25 @@
+{
+  "name": "xat-www",
+  "version": "0.1.0",
+  "description": "The xat website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iiegor/xat-www.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iiegor/xat-www/issues"
+  },
+  "homepage": "https://github.com/iiegor/xat-www#readme",
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "handlebars": "^4.0.3",
+    "hapi": "^10.2.0",
+    "vision": "^3.0.0"
+  }
+}
