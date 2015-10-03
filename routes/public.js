@@ -2,9 +2,7 @@ var routes = [
   {
     path: '/',
     method: 'GET',
-    handler: function(request, reply) {
-      reply('Hello world!');
-    }
+    handler: require('../handlers/home.js')
   }
 ];
 
