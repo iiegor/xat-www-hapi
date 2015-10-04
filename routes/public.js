@@ -1,3 +1,19 @@
+var _ = require('lodash');
+
+var unathenticatedRouteConfig = {
+  config: {
+    auth: {
+      mode: 'try',
+      strategy: 'session'
+    },
+    plugins: {
+      'hapi-auth-cookie': {
+        redirectTo: false
+      }
+    }
+  }
+};
+
 var routes = [
   {
     path: '/static/{path*}',
@@ -33,7 +49,15 @@ var routes = [
   }, {
     path: '/login',
     method: 'GET',
-    handler: require('../handlers/account.js').login
+    handler: require('../facets/user/login.js')
+  }, {
+    path: '/login',
+    method: 'POST',
+    handler: require('../facets/user/login.js')
+  }, {
+    path: '/logout',
+    method: 'POST',
+    handler: require('../facets/user/logout')
   }, {
     path: '/room/{room}',
     method: 'GET',
@@ -68,5 +92,9 @@ var routes = [
     handler: require("../handlers/fallback")
   }
 ];
+
+routes = routes.map(function(route) {
+  return _.merge({}, unathenticatedRouteConfig, route);
+});
 
 module.exports = routes;

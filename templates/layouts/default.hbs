@@ -37,7 +37,11 @@
 
         <ul class="nav">
           <!--<li class="nav-item {{#compare page '/'}}active{{/compare}}"><a href="/" class="nav-item-link">Home</a></li>-->
+          {{#if user}}
+          <li class="nav-item"><form method="POST" action="/logout">{{> form_security }}<button type="submit" class="nav-item-link">log out</button></form></li>
+          {{else}}
           <li class="nav-item {{#compare page '/login'}}active{{/compare}}"><a href="/login" class="nav-item-link">Login</a></li>
+          {{/if}}
         </ul>
       </div>
     </nav>

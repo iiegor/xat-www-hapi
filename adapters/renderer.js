@@ -1,5 +1,6 @@
 var url = require('url'),
-  Hoek = require('hoek');
+  Hoek = require('hoek'),
+  Boom = require('boom');
 
 var humans = [];
 
@@ -10,7 +11,27 @@ exports.register = function(server, options, next) {
       request.roomName = request.params.room;
     }
 
-    return reply.continue();
+    // TODO: Check session
+    if (request.auth && request.auth.credentials && !request.path.match(/static\//)) {
+      request.loggedInUser = request.auth.credentials;
+      completePreHandler();
+    } else {
+      completePreHandler();
+    }
+
+    function completePreHandler() {
+
+      if (request.method !== "post") {
+        return reply.continue();
+      }
+
+      if (request.payload.honey && request.payload.honey.length) {
+        return reply(Boom.badRequest(request.path));
+      }
+
+      delete request.payload.honey;
+      return reply.continue();
+    }
   });
 
   server.ext('onPreResponse', function(request, reply) {

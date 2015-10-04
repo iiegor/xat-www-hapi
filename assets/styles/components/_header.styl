@@ -36,7 +36,7 @@ header .header-nav {
       position relative
       float left
       
-      & > a {
+      & .nav-item-link {
         display block
         padding 20px 0
         width 104px
@@ -47,7 +47,17 @@ header .header-nav {
         text-align center
       }
       
-      &.active > a {
+      button {
+        background-color transparent
+        border 0
+        color #ccc
+        
+        &:focus {
+          outline none
+        }
+      }
+      
+      &.active .nav-item-link {
         color #fff !important
         background-color header-nav-item-active-color
         border-bottom 2px solid header-nav-item-active-border-color
