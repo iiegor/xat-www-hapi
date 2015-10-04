@@ -9,7 +9,6 @@ bole.output({
 });
 
 var connection = {
-  host: process.env.HOST || "localhost",
   port: process.env.PORT || "8080"
 };
 

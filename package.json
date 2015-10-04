@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "NODE_ENV=dev gulp dev",
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "gulp build && node server.js"
   },
   "repository": {
     "type": "git",
