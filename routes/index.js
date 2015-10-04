@@ -19,4 +19,11 @@ var routes = publicRoutes.concat(authRoutes).reduce(function(routes, route) {
   return routes;
 }, []);
 
+// Convenience method for tests
+routes.at = function(name) {
+  return _.find(this, function(route) {
+    return name === route.method + " " + route.path;
+  });
+};
+
 module.exports = routes;

@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "NODE_ENV=dev gulp dev",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "lab --verbose --colors --ignore '$$bole,__grim__,flushdb,end' --assert code --timeout 5000"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "bistre": "^1.0.0",
     "browserify": "^5.8.0",
+    "code": "^1.5.0",
     "gulp": "^3.8.10",
     "gulp-concat": "^2.2.0",
     "gulp-jshint": "^1.9.0",
@@ -43,6 +45,7 @@
     "gulp-stylus": "^1.0.0",
     "gulp-uglify": "^0.3.0",
     "imagemin-pngcrush": "^1.0.0",
+    "lab": "^6.1.0",
     "vinyl-source-stream": "^0.1.1"
   }
 }
