@@ -1,6 +1,5 @@
 node_modules/
 npm-debug.log
 .env
-.env.dev
 static/
 dev.sh
