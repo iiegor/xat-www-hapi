@@ -1,6 +1,6 @@
 {
   "name": "xat-www",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The xat website",
   "main": "server.js",
   "scripts": {
