@@ -1,1 +1,1 @@
-web: gulp build && PORT=5000 node server.js
+web: gulp build && PORT=80 node server.js
