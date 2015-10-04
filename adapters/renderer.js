@@ -19,6 +19,7 @@ exports.register = function(server, options, next) {
       stamp: request.server.stamp,
       devEnv: (process.env.NODE_ENV === 'dev'),
       url: process.env.CANONICAL_HOST,
+      page: request.url.pathname,
     };
 
     if (request.response && request.response.variety && request.response.variety.match(/view|plain/)) {

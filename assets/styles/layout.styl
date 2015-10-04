@@ -6,10 +6,12 @@ body {
 }
 
 a {
+  color #ccc
   text-decoration none
 }
 
 body {
+  font 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif
   background-color background-color
 }
 
@@ -19,12 +21,55 @@ header {
   display block
 }
 
+header .header-notice {
+  display none
+  background-color header-notice-color
+  padding 12px
+  
+  & .btn-okay {
+    position relative
+    cursor pointer
+    background-color header-notice-btn-color
+    text-decoration none
+    border-radius 2px
+    padding 4px 12px
+    float right
+    top -4px
+    
+    &:hover {
+      background-color header-notice-btn-hover-color
+    }
+  }
+  
+  & a {
+    color #000
+    text-decoration underline
+  }
+  
+  &.show {
+    display block
+  }
+}
+
 header .header-nav {
   background-color header-nav-color
   height header-nav-height
   border-bottom 1px solid header-nav-border-color
   
+  .logo {
+    float left
+    
+    & > .logo-link {
+      background url(http://xat.com/images/xatblk.gif) no-repeat 5px
+      background-size 118px 42px
+      display block
+      height header-nav-height
+      width 138px
+    }
+  }
+  
   ul.nav {
+    float right
     margin 0
     padding 0
     list-style none
@@ -35,12 +80,18 @@ header .header-nav {
       
       & > a {
         display block
-        padding 19px 0
+        padding 20px 0
         width 104px
         height header-nav-height
-        border-right 1px solid #111
+        border-left 1px solid #111
         box-sizing border-box
         text-align center
+      }
+      
+      &.active > a {
+        color #fff !important
+        background-color header-nav-item-active-color
+        border-bottom 2px solid header-nav-item-active-border-color
       }
     }
   }

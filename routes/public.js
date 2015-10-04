@@ -31,6 +31,10 @@ var routes = [
     method: 'GET',
     handler: require('../handlers/home.js')
   }, {
+    path: '/login',
+    method: 'GET',
+    handler: require('../handlers/account.js').login
+  }, {
     path: '/room/{room}',
     method: 'GET',
     handler: require('../handlers/room.js')

@@ -24,13 +24,20 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebSite">
-  <header>
+  <header id="view-header">
     <nav class="header-nav" role="navigation">
+      <div class="logo">
+        <a href="/" title="Home" class="logo-link"></a>
+      </div>
+
       <ul class="nav">
-        <li class="nav-item"><a href="/" class="nav-item-link">Home</a></li>
-        <li class="nav-item"><a href="/login" class="nav-item-link">Login</a></li>
+        <li class="nav-item {{#compare page '/'}}active{{/compare}}"><a href="/" class="nav-item-link">Home</a></li>
+        <li class="nav-item {{#compare page '/login'}}active{{/compare}}"><a href="/login" class="nav-item-link">Login</a></li>
       </ul>
     </nav>
+    <div class="header-notice" data-bind="css: { show: showNotice }">
+      This site uses third-party cookies, if you continue viewing this site you're accepting our <a href="#terms">terms and conditions</a>. <a class="btn-okay" data-bind="click: hideNotice">okay</a>
+    </div>
   </header>
   
   <main role="main">
