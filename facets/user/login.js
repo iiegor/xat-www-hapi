@@ -1,4 +1,5 @@
-var fmt = require("util").format;
+var User = require('../../models/user'),
+  fmt = require("util").format;
 
 var lockoutInterval = 60; // seconds
 var maxAttemptsBeforeLockout = 5;
@@ -25,7 +26,7 @@ module.exports = function(request, reply) {
         type: 'missing'
       };
     } else {
-      user = users[request.payload.name];
+      /*user = users[request.payload.name];
       if (!user || user.password !== request.payload.password) {
         opts.error = 'Invalid username or password';
       }
@@ -34,7 +35,19 @@ module.exports = function(request, reply) {
 
         var donePath = getDonePath(user);
         return reply.redirect(donePath);
-      }
+      }*/
+      User.new(request).login(request.payload, function(err, user) {
+        if (err || !user) {
+          opts.error = 'Invalid username or password';
+
+          return reply.view('user/login', opts).code(400);
+        }
+
+        request.auth.session.set(user);
+
+        var donePath = getDonePath(user);
+        return reply.redirect(donePath);
+      });
     }
   }
 

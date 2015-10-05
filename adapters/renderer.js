@@ -5,13 +5,11 @@ var url = require('url'),
 var humans = [];
 
 exports.register = function(server, options, next) {
+  // TODO: Catch errors
   var database = require('./database')();
 
   server.ext('onPreHandler', function(request, reply) {
-    // Generate `request.room` for global
-    if (request.params.room) {
-      request.roomName = request.params.room;
-    }
+    request.database = database;
 
     // TODO: Check session
     if (request.auth && request.auth.credentials && !request.path.match(/static\//)) {
