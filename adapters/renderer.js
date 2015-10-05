@@ -5,6 +5,8 @@ var url = require('url'),
 var humans = [];
 
 exports.register = function(server, options, next) {
+  var database = require('./database')();
+
   server.ext('onPreHandler', function(request, reply) {
     // Generate `request.room` for global
     if (request.params.room) {
