@@ -26,16 +26,6 @@ module.exports = function(request, reply) {
         type: 'missing'
       };
     } else {
-      /*user = users[request.payload.name];
-      if (!user || user.password !== request.payload.password) {
-        opts.error = 'Invalid username or password';
-      }
-      else {
-        request.auth.session.set(user);
-
-        var donePath = getDonePath(user);
-        return reply.redirect(donePath);
-      }*/
       User.new(request).login(request.payload, function(err, user) {
         if (err || !user) {
           opts.error = 'Invalid username or password';
