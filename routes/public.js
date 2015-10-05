@@ -55,9 +55,21 @@ var routes = [
     method: 'POST',
     handler: require('../facets/user/login.js')
   }, {
+    path: '/signup',
+    method: 'GET',
+    handler: require('../facets/user/signup.js')
+  }, {
+    path: '/signup',
+    method: 'POST',
+    handler: require('../facets/user/signup.js')
+  }, {
     path: '/logout',
     method: 'POST',
     handler: require('../facets/user/logout')
+  }, {
+    path: '/~{username}',
+    method: 'GET',
+    handler: require('../facets/user/profile')
   }, {
     path: '/room/{room}',
     method: 'GET',

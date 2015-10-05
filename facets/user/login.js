@@ -5,9 +5,10 @@ var maxAttemptsBeforeLockout = 5;
 
 var users = {
   iegor: {
-    id: 'iegor',
-    password: 'iegor3',
-    name: 'Iegor Azuaga'
+    id: '1',
+    username: 'iegor',
+    fullname: 'Iegor Azuaga',
+    password: 'iegor3'
   }
 };
 
@@ -51,7 +52,7 @@ module.exports = function(request, reply) {
       var done = url.resolveObject('https://example.com/login', donePath.replace(/\\/g, '/'));
       return done.pathname + (done.search || "");
     } else if (user) {
-      return '/~' + user.name;
+      return '/~' + user.username;
     } else {
       return '';
     }
