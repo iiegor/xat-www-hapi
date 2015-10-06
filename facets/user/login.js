@@ -1,17 +1,8 @@
-var User = require('../../models/user'),
-  fmt = require("util").format;
+var User = require('../../models/user');
 
-var lockoutInterval = 60; // seconds
+var loginAttempts = [];
+var lockoutInterval = 60000; // seconds
 var maxAttemptsBeforeLockout = 5;
-
-var users = {
-  iegor: {
-    id: '1',
-    username: 'iegor',
-    fullname: 'Iegor Azuaga',
-    password: 'iegor3'
-  }
-};
 
 module.exports = function(request, reply) {
   if (request.auth.isAuthenticated) {
@@ -26,6 +17,28 @@ module.exports = function(request, reply) {
         type: 'missing'
       };
     } else {
+      // Check or register login attempt
+      var loginAttempt;
+
+      if (!loginAttempts[request.payload.name]) loginAttempts[request.payload.name] = 0;
+
+      if (loginAttempts[request.payload.name] >= maxAttemptsBeforeLockout) {
+        opts.errors = [
+          {
+            message: "Login has been disabled for 60 seconds to protect your account from attacks. Consider resetting your password."
+          }
+        ];
+
+        (function() {
+          setTimeout(function() { delete loginAttempts[request.payload.name]; }, lockoutInterval);
+        })();
+
+        return reply.view('user/login', opts).code(403);
+      }
+
+      loginAttempts[request.payload.name] += 1;
+
+      // Try login the user
       User.new(request).login(request.payload, function(err, user) {
         if (err || !user) {
           opts.error = 'Invalid username or password';
@@ -34,6 +47,7 @@ module.exports = function(request, reply) {
         }
 
         request.auth.session.set(user);
+        delete loginAttempts[request.payload.name];
 
         var donePath = getDonePath(user);
         return reply.redirect(donePath);
