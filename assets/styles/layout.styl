@@ -39,11 +39,15 @@ body {
 }
 
 .right {
-  float: right;
+  float right
 }
 
 .left {
-  float: left;
+  float left
+}
+
+.text-centered {
+  text-align center
 }
 
 .honey {
@@ -137,4 +141,47 @@ hgroup {
     font-weight 300
     line-height 1.2
   }
+}
+
+footer {
+  margin: 40px
+  
+  .author {
+    margin-top: 20px;
+    display: inline-block;
+    color: rgba(0,0,0,0.4);
+    text-decoration: none;
+    position: relative;
+  }
+}
+
+.author:before,
+.author:after {
+  content: "\2665";
+  color: rgba(203,56,55,0);
+  font-size: 14px;
+  transition: all 0.3s;
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  top: 1px;
+}
+
+.author:before {
+  left: -10px;
+}
+.author:after {
+  right: -10px;
+}
+.author:hover {
+  color: #cb3837;
+}
+.author:hover:before,
+.author:hover:after {
+  color: #cb3837;
+}
+.author:hover:before {
+  left: -15px;
+}
+.author:hover:after {
+  right: -15px;
 }
