@@ -2,7 +2,9 @@ var url = require('url'),
   Hoek = require('hoek'),
   Boom = require('boom');
 
-var humans = [];
+var humans = [
+  'iegor'
+];
 
 exports.register = function(server, options, next) {
   var database = require('./database')();
