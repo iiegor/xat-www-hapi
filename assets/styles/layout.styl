@@ -3,6 +3,15 @@ body {
   margin 0
   padding 0
   color text-color
+  -webkit-font-smoothing antialiased
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing border-box
+  -webkit-box-sizing border-box
+  box-sizing border-box
 }
 
 a {
@@ -11,8 +20,13 @@ a {
 }
 
 body {
-  font 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif
+  font-family 'Source Sans Pro', 'Lucida Grande', sans-serif
+  font-weight 400
+  font-size 14px
+  line-height 17px
+  letter-spacing -0.03em
   background-color background-color
+  color rgba(0,0,0,0.8)
 }
 
 .clearfix:before,.clearfix:after {
@@ -24,6 +38,103 @@ body {
     clear both
 }
 
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
 .honey {
   display none
+}
+
+#view-content {
+  min-height 100%
+  height auto
+  padding 0
+  
+  .inner {
+    margin 0 auto
+    padding 30px 0
+    max-width 1120px
+  }
+}
+
+.container {
+  position relative
+  float none
+  clear both
+  overflow visible
+  max-width 1120px
+  margin 0 auto
+  padding 0 20px
+  
+  &.narrow {
+    max-width 420px
+  }
+}
+
+ul.errors,
+p.error {
+  background #fff
+  color #cb3837
+  margin 20px 0
+  padding 0
+}
+
+ul.errors {
+  list-style: none;
+}
+
+ul.errors li,
+p.error {
+  line-height 1.4
+  padding 6px 0 6px 18px
+  position relative
+}
+
+ul.errors li:before,
+p.error:before {
+  position absolute
+  top 7px
+  left 0
+  content "\2716"
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0 0 0;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  color: rgba(0,0,0,0.9);
+}
+
+label {
+  display block
+  margin 0 0 3px
+  padding-left 5px
+  color rgba(0,0,0,0.8)
+  font-weight 600
+}
+
+hgroup {
+  font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
+  
+  h1, h2 {
+    text-align center
+  }
+  
+  h1 {
+    margin 0.2em 0
+    padding 0
+  }
+  
+  h2 {
+    font-weight 300
+    line-height 1.2
+  }
 }

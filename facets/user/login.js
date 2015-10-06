@@ -29,9 +29,9 @@ module.exports = function(request, reply) {
           }
         ];
 
-        (function() {
-          setTimeout(function() { delete loginAttempts[request.payload.name]; }, lockoutInterval);
-        })();
+        setTimeout(function() { 
+          delete loginAttempts[request.payload.name]; 
+        }, lockoutInterval);
 
         return reply.view('user/login', opts).code(403);
       }

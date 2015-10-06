@@ -4,8 +4,8 @@ header {
   display block
   
   .header-nav .inner, .secondary-nav .inner, .header-notice .inner {
-    max-width: 1120px;
-    margin: 0 auto;
+    max-width 1120px
+    margin 0 auto
   }
 }
 
@@ -45,6 +45,10 @@ header .header-nav {
         border-left 1px solid #111
         box-sizing border-box
         text-align center
+        
+        &:hover {
+          color #fff
+        }
       }
       
       button {
@@ -88,7 +92,7 @@ header .secondary-nav {
         height secondary-nav-height
         box-sizing border-box
         text-align center
-        color #000
+        color rgba(0,0,0,0.8)
         text-transform uppercase
         font-weight 500
         

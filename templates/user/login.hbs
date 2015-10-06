@@ -1,19 +1,24 @@
-{{> errors}}
+<div class="container narrow">
+  <hgroup>
+    <h1>login</h1>
+  </hgroup>
+  {{> errors}}
 
-<form action='/login' method='post'>
-  <label for="name">Username</label>
-  <input type="text" id="name" name="name" required="required" tabindex=2 autocorrect="off" autocapitalize="off" autofocus/>
+  <form action='/login' method='post'>
+    <label for="name">username</label>
+    <input type="text" id="name" name="name" required="required" tabindex=2 autocorrect="off" autocapitalize="off" autofocus/>
 
-  <label for="password">Password</label>
-  <input type="password" id="password" name="password" required="required" tabindex=3 />
+    <label for="password">password</label>
+    <input type="password" id="password" name="password" required="required" tabindex=3 />
 
-  <input type="submit" class="full-width" value="Submit" />
+    <input type="submit" class="button default large full-width" value="login" />
 
-  <input type="hidden" name="done" value="{{donePath}}">
+    <input type="hidden" name="done" value="{{donePath}}">
 
-  <p class="center">
-    <a href="/forgot">forgot</a> |
-    <a href="/signup">signup</a>
-  </p>
-  {{> form_security }}
-</form>
+    <p class="right">
+      <a href="/forgot" style="color: rgba(0,0,0,0.8); text-decoration: underline">forgot</a> or
+      <a href="/signup" style="color: rgba(0,0,0,0.8); text-decoration: underline">signup</a>
+    </p>
+    {{> form_security }}
+  </form>
+</div>
