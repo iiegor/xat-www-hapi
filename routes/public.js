@@ -75,6 +75,18 @@ var routes = [
     method: 'GET',
     handler: require('../handlers/room.js')
   }, {
+    path: '/login/gateway',
+    method: 'GET',
+    handler: function(request, reply) {
+      var loggedInUser = request.loggedInUser;
+
+      if (!loggedInUser) {
+        return reply.redirect('/login?done=%2Flogin%2Fgateway').code(302);
+      } else {
+        return reply.view('user/login-gateway', {});
+      }
+    }
+  }, {
     path: '/web_gear/chat/auser3.php',
     method: 'GET',
     handler: require("../handlers/ops").auser

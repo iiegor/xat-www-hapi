@@ -11,7 +11,6 @@ exports.register = function(server, options, next) {
   server.ext('onPreHandler', function(request, reply) {
     request.database = database;
 
-    // TODO: Check session
     if (request.auth && request.auth.credentials && !request.path.match(/static\//)) {
       request.loggedInUser = request.auth.credentials;
       completePreHandler();

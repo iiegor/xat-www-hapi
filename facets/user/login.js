@@ -1,4 +1,5 @@
-var User = require('../../models/user');
+var User = require('../../models/user'),
+  url = require('url');
 
 var loginAttempts = [];
 var lockoutInterval = 60000; // seconds
@@ -69,7 +70,7 @@ module.exports = function(request, reply) {
       var done = url.resolveObject('https://example.com/login', donePath.replace(/\\/g, '/'));
       return done.pathname + (done.search || "");
     } else if (user) {
-      return '/~' + user.username;
+      return '/login/gateway';
     } else {
       return '';
     }

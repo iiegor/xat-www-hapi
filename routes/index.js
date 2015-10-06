@@ -1,6 +1,6 @@
 var _ = require("lodash");
 var publicRoutes = require('./public');
-var authRoutes = [];
+var authRoutes = require('./authenticated');
 
 var routes = publicRoutes.concat(authRoutes).reduce(function(routes, route) {
   // If route defines an array of paths,
