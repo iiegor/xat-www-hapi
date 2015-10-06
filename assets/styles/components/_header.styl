@@ -45,12 +45,30 @@ header .header-nav {
         border-left 1px solid #111
         box-sizing border-box
         text-align center
-        
-        &:hover {
-          color #fff
-        }
       }
       
+      & .nav-item-user-link {
+        display block
+        padding 20px
+        width 120px
+        height header-nav-height
+        box-sizing border-box
+        text-align right
+      }
+      
+      & .nav-item-user-avatar {
+        display block
+        background-image url(https://s.gravatar.com/avatar/d4a2f12ceae3b7f211b661576d22bfb9?size=100&default=retro)
+        background-size cover
+        position absolute
+        height header-nav-height
+        width header-nav-height
+      }
+      
+      & .nav-item-link:hover, &:hover .nav-item-user-link {
+        color #fff
+      }
+       
       button {
         background-color transparent
         border 0
