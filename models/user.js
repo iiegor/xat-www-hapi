@@ -21,6 +21,7 @@ User.prototype.login = function(info, callback) {
   var self = this;
 
   return new P(function(resolve, reject) {
+    // TODO: Select only the needed data.
     self.database.query("SELECT * FROM users WHERE username = '" + info.name + "' AND password = '" + info.password + "' LIMIT 1", function(err, data) {
       if (err) {
         return reject(err);

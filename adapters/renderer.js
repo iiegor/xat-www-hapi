@@ -5,7 +5,6 @@ var url = require('url'),
 var humans = [];
 
 exports.register = function(server, options, next) {
-  // TODO: Catch errors
   var database = require('./database')();
 
   server.ext('onPreHandler', function(request, reply) {

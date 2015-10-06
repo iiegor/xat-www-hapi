@@ -73,7 +73,7 @@ var routes = [
   }, {
     path: '/room/{room}',
     method: 'GET',
-    handler: require('../handlers/room.js')
+    handler: require('../facets/room/room.js')
   }, {
     path: '/login/gateway',
     method: 'GET',
