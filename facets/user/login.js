@@ -1,5 +1,6 @@
 var User = require('../../models/user'),
-  url = require('url');
+  url = require('url'),
+  crypto = require('crypto');
 
 var loginAttempts = [];
 var lockoutInterval = 60000; // seconds
@@ -38,6 +39,9 @@ module.exports = function(request, reply) {
       }
 
       loginAttempts[request.payload.name] += 1;
+
+      // Hash the password
+      request.payload.password = crypto.createHash('sha256').update(request.payload.password, 'utf8').digest('base64');
 
       // Try login the user
       User.new(request).login(request.payload, function(err, user) {
