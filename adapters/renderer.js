@@ -10,6 +10,10 @@ exports.register = function(server, options, next) {
   var database = require('./database')();
 
   server.ext('onPreHandler', function(request, reply) {
+    if (request.params.room) {
+      request.roomName = request.params.room
+    }
+
     request.database = database;
 
     if (request.auth && request.auth.credentials && !request.path.match(/static\//)) {

@@ -4,13 +4,18 @@ module.exports = function(request, reply) {
   var loggedInUser = request.loggedInUser;
   var profileName = request.params.username;
 
-  var User = UserModel.new(request);
-
   var opts = {
     profileName: profileName,
-    isSelf: loggedInUser && profileName === loggedInUser.username,
-    isStaff: true
+    isSelf: loggedInUser && profileName === loggedInUser.username
   };
 
-  reply.view('user/profile', opts).code(200);
+  var User = UserModel.new(request);
+
+  User.get(['xats'], profileName, function(err, data) {
+    if (err || !data) {
+      return reply.redirect('/');
+    }
+
+    return reply.view('user/profile', opts).code(200);
+  });
 };

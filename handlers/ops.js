@@ -36,5 +36,20 @@ module.exports = {
     var res = {"31":"Exit","86":1,"113":"Reason (required):","118":"(must put reason)","119":"I have banned $1 forever without a listed reason.","120":"I have banned $1 for $2 hours without a listed reason.","194":"I have transferred $1 to $2. Reason: $3","199":"I have $1 $2 for $3 hours without a listed reason.","248":"Group to Transfer to:","260":"Chat is in protect mode. You must register to view or chat right now."};
 
     return reply(res).code(200);
+  },
+
+  status: function(appVersion) {
+    return function(request, reply) {
+      var info = {
+        status: 'ok',
+        pid: process.pid,
+        app: process.title,
+        host: process.env.SMF_ZONENAME,
+        uptime: process.uptime(),
+        version: appVersion
+      };
+
+      return reply(info).code(200);
+    };
   }
 };

@@ -31,8 +31,9 @@
   <header id="view-header">
     <nav class="header-nav" role="navigation">
       <div class="inner clearfix">
-        <div class="logo">
+        <div class="logo {{#if room}}in-room{{/if}}">
           <a href="/" title="Home" class="logo-link"></a>
+          {{#if room}}<a href="/" class="chat-link">{{room.name}}</a>{{/if}}
         </div>
 
         <ul class="nav">

@@ -31,3 +31,17 @@ User.prototype.login = function(info, callback) {
     });
   }).nodeify(callback);
 };
+
+User.prototype.get = function(data, username, callback) {
+  var self = this;
+
+  return new P(function(resolve, reject) {
+    self.database.query("SELECT " + data.join(',') + " FROM users WHERE username = '" + username + "' LIMIT 1", function(err, data) {
+      if (err) {
+        return reject(err);
+      }
+
+      return resolve(data[0]);
+    });
+  }).nodeify(callback);
+}

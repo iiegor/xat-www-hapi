@@ -95,6 +95,16 @@ var routes = [
       }
     }
   }, {
+    path: '/_monitor/ping',
+    method: 'GET',
+    handler: function(request, reply) {
+      return reply('ok').code(200);
+    }
+  }, {
+    path: "/_monitor/status",
+    method: "GET",
+    handler: require('../handlers/ops').status(require('../package.json').version)
+  }, {
     path: '/web_gear/chat/auser3.php',
     method: 'GET',
     handler: require("../handlers/ops").auser

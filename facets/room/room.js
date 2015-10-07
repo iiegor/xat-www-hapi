@@ -10,6 +10,8 @@ module.exports = function(request, reply) {
       return reply.redirect('/');
     }
 
-    return reply.view('room/room', room).code(200);
+    opts.room = room;
+
+    return reply.view('room/room', opts).code(200);
   });
 };
