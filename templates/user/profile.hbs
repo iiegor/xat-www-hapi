@@ -1,1 +1,18 @@
-You're viewing the profile of {{profileName}}. {{user.xats}} xats & {{user.days}} days
+<div class="sidebar">
+  <a href="" class="avatar">
+    <img src="https://s.gravatar.com/avatar/88682ea245ecc26559ae9f1f565b0c37?size=296&amp;default=retro">
+  </a>
+
+  <h2>{{#if isSelf}}Your account{{else}}@{{profileName}}{{/if}} {{#if isStaff}}<span class="badge">staff</span>{{/if}}</h2>
+
+  {{#if isSelf}}
+    <ul class="profile-options-list">
+      <li><a href="/settings/edit">Update your user information</a></li>
+      <li><a href="/settings/remove">Delete this account</a></li>
+    </ul>
+  {{/if}}
+</div>
+
+<div class="column">
+  You're viewing the profile of {{profileName}}. {{user.xats}} xats & {{user.days}} days
+</div>
