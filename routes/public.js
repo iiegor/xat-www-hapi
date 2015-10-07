@@ -29,6 +29,14 @@ var routes = [
       }
     }
   }, {
+    path: '/images/{path*}',
+    method: 'GET',
+    handler: {
+      directory: {
+        path: './assets/misc/images'
+      }
+    }
+  }, {
     path: '/web_gear/{path*}',
     method: 'GET',
     handler: {
