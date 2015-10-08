@@ -7,7 +7,13 @@ We're using Hapi as our framework. If you'd like to contribute to this project, 
 
 ### Running the server
 ```sh
+# install package deps
 $ npm install
+
+# copy environment-based config/secrets (don't forget to edit with your config)
+cp .env.example .env
+
+# run the server
 $ npm run dev
 ```
 
