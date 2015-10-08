@@ -20,8 +20,6 @@ module.exports = function(request, reply) {
       };
     } else {
       // Check or register login attempt
-      var loginAttempt;
-
       if (!loginAttempts[request.payload.name]) loginAttempts[request.payload.name] = 0;
 
       if (loginAttempts[request.payload.name] >= maxAttemptsBeforeLockout) {

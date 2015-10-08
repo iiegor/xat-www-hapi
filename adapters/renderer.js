@@ -1,6 +1,7 @@
 var url = require('url'),
   Hoek = require('hoek'),
-  Boom = require('boom');
+  Boom = require('boom'),
+  Bole = require('bole');
 
 var humans = [
   'iegor'
@@ -15,6 +16,7 @@ exports.register = function(server, options, next) {
     }
 
     request.database = database;
+    request.logger = Bole(request.id);
 
     if (request.auth && request.auth.credentials && !request.path.match(/static\//)) {
       request.loggedInUser = request.auth.credentials;
