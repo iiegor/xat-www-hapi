@@ -11,10 +11,12 @@ module.exports = function(request, reply) {
 
   var User = UserModel.new(request);
 
-  User.get(['xats'], profileName, function(err, data) {
+  User.get(['xats', 'rank'], profileName, function(err, data) {
     if (err || !data) {
       return reply.redirect('/');
     }
+
+    opts.isStaff = true;
 
     return reply.view('user/profile', opts).code(200);
   });
