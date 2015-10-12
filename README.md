@@ -16,6 +16,7 @@ $ cp .env.example .env
 # run the server
 $ npm run dev
 ```
+**Note:** Running directly on the :80 port it's not a good idea, instead use something like [varnish-cache](https://www.varnish-cache.org/) (highly recommended).
 
 ### Code style
 We're using semi-colons and comma-last.
