@@ -1,3 +1,14 @@
-Login as {{user.username}} ({{user.id}}) successful.
-Please close all chat windows.<br>
-<embed src="{{slice url 'www.'}}/web_gear/chat/chat.swf" quality="high" width="220" height="140" name="chat" flashvars="id=8&amp;em={{user.username}}&amp;pw={{user.loginKey}}" align="middle" allowtaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://xat.com/update_flash.php">
+<script>
+function LoggedIn(ok) {
+  var s = "<H3>Login as {{user.username}} ({{user.id}})  successful.<BR>Please close all chat windows. </H3><P><LARGE> DO NOT SHARE YOUR LOGIN DETAILS OR YOU WILL LOCK YOURSELF OUT OF THE CHAT</LARGE></P>";
+  if(!ok) s = "<H3>Login failed..</H3>";
+
+  var divId=document.getElementById("LoginResult");
+  if(divId) divId.innerHTML=s;
+}
+</script>
+
+<div id="LoginResult">
+  Please wait...
+</div>
+<embed src="http://www.xat.dev/web_gear/chat/chat.swf" quality="high" width="220" height="140" name="chat" flashvars="id=8&amp;em={{user.username}}&amp;pw={{user.loginKey}}" align="middle" allowtaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://xat.com/update_flash.php">

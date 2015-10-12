@@ -3,7 +3,7 @@
     <img src="https://s.gravatar.com/avatar/88682ea245ecc26559ae9f1f565b0c37?size=296&amp;default=retro">
   </a>
 
-  <h2>{{#if isSelf}}Your account{{else}}@{{profileName}}{{/if}} {{#if isStaff}}<span class="badge">staff</span>{{/if}}</h2>
+  <h2>{{#if isSelf}}Your account{{else}}@{{profileName}}{{/if}} {{#if isStaff}}<span class="badge">staff</span>{{/if}} {{#if isDeveloper}}<span class="badge developer">developer</span>{{/if}}</h2>
 
   {{#if isSelf}}
     <ul class="profile-options-list">
@@ -11,8 +11,17 @@
       <li><a href="/settings/remove">Delete this account</a></li>
     </ul>
   {{/if}}
+  
+  <!-- Module: Owned chat rooms by the user
+  <h2>User chat rooms</h2>
+  <ul class="profile-chats-list">
+    <li><a href="#">lobby chat group</a> <span class="badge moderator small">moderator</span></li>
+    <li><a href="#">help chat group</a> <span class="badge owner small">owner</span></li>
+    <li><a href="#">xat_test chat group</a> <span class="badge owner small">owner</span></li>
+  </ul>
+  -->
 </div>
 
 <div class="column">
-  You're viewing the profile of {{profileName}}. {{user.xats}} xats & {{user.days}} days
+  You're viewing the profile of {{profileName}}. {{user.xats}} xats & {{user.days}} days &#9733;
 </div>
