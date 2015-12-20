@@ -1,0 +1,1 @@
+NODE_ENV=dev HOST=www.xat.dev PORT=80 gulp dev

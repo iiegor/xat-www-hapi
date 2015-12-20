@@ -3,5 +3,4 @@ npm-debug.log
 .env
 .env.dev
 static/
-dev.sh
 assets/misc/images/

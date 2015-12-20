@@ -16,7 +16,7 @@ module.exports = function(request, reply) {
       return reply.redirect('/');
     }
 
-    opts.isStaff = true;
+    opts.isStaff = data.rank == 2;
 
     return reply.view('user/profile', opts).code(200);
   });
