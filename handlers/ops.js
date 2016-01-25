@@ -38,6 +38,10 @@ module.exports = {
     return reply(res).code(200);
   },
 
+  eip: function(request, reply) {
+    return reply('<chat> <width v="540" /> <height v="405" /> <back v="http://www.xatech.com/web_gear/background/xat_jeans.jpg" /> <pw v="1559591171" /> <id v="216541850" /> <oldback v="0" /> <i0 v="light" /> <i1 v="spiderman3" /> <i2 v="beams" /> <i3 v="supermanreturns" /> <i4 v="flames" /> <i5 v="circuit" /> <i6 v="drops" /> <i7 v="stars" /> <i8 v="balls" /> <i9 v="matrix" /> <i10 v="rock1" /> <i11 v="globe" /> <i12 v="disco" /> <i13 v="paper" /> <i14 v="lime_splash" /> <i15 v="winter_holiday" /> <i16 v="gears" /> <i17 v="bliss_like" /> <i18 v="drops_of_rain" /> <i19 v="metalglass" /> <i20 v="green" /> <i21 v="velvet" /> <i22 v="rock2" /> <i23 v="spiderman3b" /> <i24 v="hearts" /> <i25 v="spiderman2" /> <i26 v="on_the_beach" /> <i27 v="south_pacific" /> <i28 v="jigsaw" /> <i29 v="splash" /> </chat>').code(200);
+  },
+
   status: function(appVersion) {
     return function(request, reply) {
       var info = {

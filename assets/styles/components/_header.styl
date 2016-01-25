@@ -57,6 +57,7 @@ header .header-nav {
     & > li {
       position relative
       float left
+      display inline-flex
       
       & .nav-item-link {
         display block
@@ -71,8 +72,7 @@ header .header-nav {
       
       & .nav-item-user-link {
         display block
-        padding 20px
-        width 120px
+        padding 20px 13px
         height header-nav-height
         box-sizing border-box
         text-align right
@@ -82,7 +82,7 @@ header .header-nav {
         display block
         background-image url(https://s.gravatar.com/avatar/88682ea245ecc26559ae9f1f565b0c37?size=100&default=retro)
         background-size cover
-        position absolute
+        position relative
         height header-nav-height
         width header-nav-height
       }
