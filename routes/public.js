@@ -113,7 +113,7 @@ var routes = [
     method: 'GET',
     handler: require("../handlers/ops").pow
   }, {
-    path: '/web_gear/chat/ip2.htm',
+    path: '/web_gear/chat/ip2.php',
     method: 'GET',
     handler: require("../handlers/ops").ips
   }, {
