@@ -1,1 +1,20 @@
+<script type="text/javascript">
+function OpenWidget(id)
+{
+  var target = document.getElementById('media');
+
+  target.innerHTML='<embed src="//www.xat.dev/web_gear/flash/'+id+'.swf?65FF7" quality="high" wmode="transparent" flashvars="cn=1" width="'+ 425 +'" height="600" name="app" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" />';  
+  
+  return 1;
+}
+
+function OpenByN(n) {
+  OpenWidget(n);
+ 
+  return 1;
+}
+</script>
+
+<div id="media" style="display: inline-block;"></div>
+
 {{> chatbox roomId=room.id roomName=name debug=false }}
